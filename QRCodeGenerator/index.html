@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<title>QR Code Generator</title>
+	<link rel="stylesheet" href="style.css"/>
+	<script text="text/javascript" src="qrcode.js"></script>
+</head>
+
+<body>
+	<div id="qrcode">
+		<input type="text" id="valor" value="" placeholder="Digite alguma coisa">
+		<button onClick="createQrCode()">Gerar QR Code</button>
+	</div>
+
+</body>
+	
+	<script>
+			function createQrCode()
+	{
+		var userInput = document.getElementById('valor').value;
+
+		var qrcode = new QRCode("qrcode", {
+			text: userInput,
+			width: 256,
+			height: 256,
+			colorDark: "black",
+			colorLight: "white",
+			correctLevel : QRCode.CorrectLevel.H
+		});
+
+	}
+
+
+	</script>
+</html>
